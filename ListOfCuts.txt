@@ -1,0 +1,29 @@
+//Path to Delphes in rsiii@gfif
+// /home/rsiii/Heptools/Delphes-3.4.1
+gSystem->Load("libDelphes")
+// Path to the Signals
+/home/rsiii/SSSFDM/VLF/Signal
+
+//Example
+//To load a Macro
+gROOT->LoadMacro("rootphi.C")
+TChain * chain = new TChain("Delphes","Nombre");
+chain->Add("/home/rsiii/SSSFDM/VLF/Signal/signal_10080/*.root");
+chain->GetEntries();
+//Good to Draw becouse every event has it
+chain->Draw("MissingET.MET")
+chain->Draw("MissingET.MET","MissingET.MET>60.")
+
+
+//List of Cuts
+//MonoJetTrigger="(ScalarHT.HT>110.)&&(MissingET.MET>110.)"
+//Cut0="(Muon_size==1)"
+//Cut1="(TMath::Sqrt(2*Muon[0].PT*MissingET.MET*(1-TMath::Cos(deltaPhi(MissingET.Phi,Muon[0].Phi))))<40.)"
+//Cut2="(0<Jet_size<4.)"
+//Cut3="(Jet[0].PT>20.)"
+//Cut4="(Muon[0].PT<20.)"
+
+
+
+//Cut5="&&(TMath::Abs(deltaPhi(Muon.Phi,MissingET.Phi))>=0)"
+
