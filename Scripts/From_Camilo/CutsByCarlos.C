@@ -20,20 +20,15 @@ float deltaPhi(float phi1, float phi2) {
     return PHI;
 }
 
-void CutsByCarlos_New()
+void CutsByCarlos_New(string argv)
 {
   gSystem->Load("libDelphes");
   std::cout<<"Delphes Loaded"<<std::endl;
 
   // Create chain of root trees
   TChain * chain = new TChain("Delphes","Nombre");
-  chain->Add("/home/rsiii/SSSFDM/VLF/Signal/signal_8078/*.root");
-  
-  
-  //chain->Add("/afs/cern.ch/user/c/csalazar/WorkPublic/VLF_CompressedSpectra/Scripts/From_Camilo/Signal/Signal/signal_10080/tag_100_80_delphes_events1.root");
-
-
-
+  // chain->Add("/home/rsiii/SSSFDM/VLF/Signal/signal_8078/*.root");
+  chain->Add(argv);
 
 
   std::cout<<"Chain Created"<<std::endl;
@@ -148,13 +143,14 @@ void CutsByCarlos_New()
 
     
   }
-  std::cout<<"NoCuts=     "<<numberOfEntries<<std::endl;
-  std::cout<<"count0=     "<<count0<<std::endl;
-  std::cout<<"count1=     "<<count1<<std::endl;
-  std::cout<<"count2=     "<<count2<<std::endl;
-  std::cout<<"count3=     "<<count3<<std::endl;
-  std::cout<<"count4=     "<<count4<<std::endl;
-  std::cout<<"countTrig = "<<countTrig<<std::endl;
+  std::cout<<"muestra:    "<<argv<<std::endl;
+  //  std::cout<<"NoCuts=     "<<numberOfEntries<<std::endl;
+  //  std::cout<<"count0=     "<<count0<<std::endl;
+  //  std::cout<<"count1=     "<<count1<<std::endl;
+  //  std::cout<<"count2=     "<<count2<<std::endl;
+  //  std::cout<<"count3=     "<<count3<<std::endl;
+  //  std::cout<<"count4=     "<<count4<<std::endl;
+  //  std::cout<<"countTrig = "<<countTrig<<std::endl;
   std::cout<<"countTotal= "<<countTotal<<std::endl;
 
 }
