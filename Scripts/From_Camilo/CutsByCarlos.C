@@ -20,15 +20,18 @@ float deltaPhi(float phi1, float phi2) {
     return PHI;
 }
 
-void CutsByCarlos_New(string argv)
+void CutsByCarlos_New(string inputfile)
 {
+  // open the file
+  const char * inputfilechar=inputfile.c_str();
+    
   gSystem->Load("libDelphes");
   std::cout<<"Delphes Loaded"<<std::endl;
 
   // Create chain of root trees
   TChain * chain = new TChain("Delphes","Nombre");
   // chain->Add("/home/rsiii/SSSFDM/VLF/Signal/signal_8078/*.root");
-  chain->Add(argv);
+  chain->Add(inputfilechar);
 
 
   std::cout<<"Chain Created"<<std::endl;

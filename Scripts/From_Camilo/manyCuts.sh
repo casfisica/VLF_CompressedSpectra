@@ -17,7 +17,13 @@ fi
 
 
 while IFS='' read -r line || [[ -n "$line" ]]; do
+    
+    #root -l -x -q 'LeerDesdeLineaDeComandos.C+("camilo")'
+    echo "*********************************************** "
+    echo "File: $line $2"
+    #echo "root -l -x -q 'CutsByCarlos.C+(\"$line\")'"
+    exp="root -l -x -q 'CutsByCarlos.C+(\"$line\")'"
+    eval $exp
 
-    echo "Text read from file: $line $2"
     
 done < "$1" #Entrega el archivo de texto como entrada.
