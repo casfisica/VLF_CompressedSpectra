@@ -18,12 +18,13 @@ fi
 
 while IFS='' read -r line || [[ -n "$line" ]]; do
     
-    #root -l -x -q 'LeerDesdeLineaDeComandos.C+("camilo")'
     echo "*********************************************** "
     echo "File: $line $2"
-    #echo "root -l -x -q 'CutsByCarlos.C+(\"$line\")'"
-    exp="root -l -x -q 'CutsByCarlos.C+(\"$line\")'"
-    eval $exp
+    # The place in Gfif is /home/rsiii/SSSFDM/VLF/Signal/signal
+    path="\/home\/rsiii\/SSSFDM\/VLF\/Signal\/signal\/$line"
+    #echo $path
+    sed 's/chain->Add();/'"chain->Add(\"$path\");"'/' ./CutsByCarlos.C > ./CutsByCarlosRun.C
+    #echo "root -l -x -q 'CutsByCarlosRun.C'"
 
     
 done < "$1" #Entrega el archivo de texto como entrada.
