@@ -41,7 +41,7 @@
 #!  Default: use the shell default Editor
 #!           or try to find one available on the system
 #!  Be careful: Only shell based editor are allowed
-text_editor = emacs
+# text_editor = None
 
 #! Prefered WebBrower
 #! If None: try to find one available on the system
@@ -93,7 +93,7 @@ mg5amc_py8_interface_path = /afs/cern.ch/work/n/nvanegas/public/MG5_aMC_v2_5_5/H
 
 #! Allow/Forbid the automatic opening of the web browser  (on the status page)
 #!  when launching MadEvent [True/False]
-# automatic_html_opening = True
+automatic_html_opening = False
 #! allow notification of finished job in the notification center (Mac Only)
 # notification_center = True
 
@@ -161,7 +161,9 @@ cluster_retry_wait = 300
 
 #! lhapdf-config
 #!  If None: try to find one available on the system
-lhapdf = /afs/cern.ch/work/n/nvanegas/public/MG5_aMC_v2_5_5/HEPTools/lhapdf6/bin/lhapdf-config #  
+lhapdf = /afs/cern.ch/work/n/nvanegas/public/MG5_aMC_v2_5_5/HEPTools/lhapdf6/bin/lhapdf-config #    
+ 
+ 
 
 #! fastjet-config
 #!  If None: try to find one available on the system
@@ -223,10 +225,16 @@ lhapdf = /afs/cern.ch/work/n/nvanegas/public/MG5_aMC_v2_5_5/HEPTools/lhapdf6/bin
 
 
 # MG5 MAIN DIRECTORY
-mg5_path = /afs/cern.ch/work/n/nvanegas/public/MG5_aMC_v2_5_5
+mg5_path = /afs/cern.ch/work/n/nvanegas/public/MG5_aMC_v2_5_5 #  
 
 # MG5 MAIN DIRECTORY
-mg5_path = /afs/cern.ch/work/n/nvanegas/public/MG5_aMC_v2_5_5
+mg5_path = /afs/cern.ch/work/n/nvanegas/public/MG5_aMC_v2_5_5 #  
 
 # MG5 MAIN DIRECTORY
-mg5_path = /afs/cern.ch/work/n/nvanegas/public/MG5_aMC_v2_5_5
+mg5_path = /afs/cern.ch/work/n/nvanegas/public/MG5_aMC_v2_5_5 #  
+
+# MG5 MAIN DIRECTORY
+mg5_path = /afs/cern.ch/work/n/nvanegas/public/MG5_aMC_v2_5_5 #  
+
+# MG5 MAIN DIRECTORY
+mg5_path = /afs/cern.ch/work/n/nvanegas/public/MG5_aMC_v2_5_5 #  

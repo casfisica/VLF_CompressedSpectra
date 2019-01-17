@@ -1,0 +1,45 @@
+#************************************************************
+#*                     MadGraph5_aMC@NLO                    *
+#*                                                          *
+#*                *                       *                 *
+#*                  *        * *        *                   *
+#*                    * * * * 5 * * * *                     *
+#*                  *        * *        *                   *
+#*                *                       *                 *
+#*                                                          *
+#*                                                          *
+#*         VERSION 2.5.5                 2017-05-26         *
+#*                                                          *
+#*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+#*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+#*                                                          *
+#************************************************************
+#*                                                          *
+#*               Command File for MadGraph5_aMC@NLO         *
+#*                                                          *
+#*     run as ./bin/mg5_aMC  filename                       *
+#*                                                          *
+#************************************************************
+set group_subprocesses Auto
+set ignore_six_quark_processes False
+set loop_optimized_output True
+set loop_color_flows False
+set gauge unitary
+set complex_mass_scheme False
+set max_npoint_for_channel 0
+define p = u u~ d d~ c c~ s s~ b b~ g
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+define l+ = e+ mu+
+define l- = e- mu-
+define vl = ve vm vt
+define vl~ = ve~ vm~ vt~
+define p = u u~ d d~ c c~ s s~ b b~ g
+define j = p
+generate p p > w+ j @1, (w+ > mu+ vm)
+add process p p > w- j @1, (w- > mu- vm~)
+add process p p > w- j j @2, (w- > mu- vm~)
+add process p p > w+ j j @2, (w+ > mu+ vm)
+add process p p > w- j j j @3, (w- > mu- vm~)
+add process p p > w+ j j j @3, (w+ > mu+ vm)
+output /afs/cern.ch/work/n/nvanegas/public/W+Jets.10
